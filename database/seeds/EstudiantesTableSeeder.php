@@ -13,6 +13,6 @@ class EstudiantesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Estudiante::class, 100)->create();
+        factory(Estudiante::class, config('seed.estudiantes'))->create();
     }
 }

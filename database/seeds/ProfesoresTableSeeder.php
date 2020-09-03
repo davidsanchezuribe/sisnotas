@@ -13,6 +13,6 @@ class ProfesoresTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Profesor::class,50)->create();
+        factory(Profesor::class, config('seed.profesores'))->create();
     }
 }

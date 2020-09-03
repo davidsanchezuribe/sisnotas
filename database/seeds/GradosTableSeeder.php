@@ -13,6 +13,6 @@ class GradosTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Grado::class,20)->create();
+        factory(Grado::class, config('seed.grados'))->create();
     }
 }

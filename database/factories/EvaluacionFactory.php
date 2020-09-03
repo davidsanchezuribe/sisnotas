@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Evaluacion::class, function (Faker $faker) {
     return [
         'desc' => $faker->sentence($nbWords = 6, $variableNbWords = true), 
-        'fecha' => $faker->date(),
+        'fecha' => $faker->dateTimeThisYear(),
         'porcentaje' => $faker->numberBetween($min = 1, $max = 100),
         'materia_id' => $faker->numberBetween($min = 1, $max = 60),
     ];

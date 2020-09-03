@@ -45,4 +45,9 @@ class Estudiante extends Model
     {
         return $this->hasMany('App\Nota');
     }
+
+    public function getId()
+    {
+        return $this -> id;
+    }
 }

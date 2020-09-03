@@ -13,6 +13,6 @@ class MateriasTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Materia::class, 60)->create();
+        factory(Materia::class, config('seed.materias'))->create();
     }
 }

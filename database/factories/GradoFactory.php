@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Grado::class, function (Faker $faker) {
     return [
-        'nombre' => $faker->bothify('Grado #?')
+        'nombre' => $faker->bothify('Grado #º?')
     ];
 });

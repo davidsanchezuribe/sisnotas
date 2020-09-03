@@ -52,4 +52,10 @@ class Materia extends Model
     {
         return $this->hasMany('App\Evaluacione');
     }
+
+    public function getGrado()
+    {
+        return $this -> grado;
+    }
+
 }
