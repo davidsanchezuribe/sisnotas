@@ -20,8 +20,8 @@ class CreateEstudiantesTable extends Migration
             $table->string('apellido',45);
             $table->unsignedBigInteger('telefono');
             $table->unsignedBigInteger('cedula');
-            $table->unsignedBigInteger('grado_id');
-            $table->foreign('grado_id')->references('id')->on('grados');
+            $table->unsignedBigInteger('grado_id')->nullable();
+            $table->foreign('grado_id')->references('id')->on('grados')->onDelete('set null');
         });
     }
 

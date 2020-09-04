@@ -18,11 +18,11 @@ class CreateMateriasTable extends Migration
             $table->timestamps();
             $table->string('nombre',100);
 
-            $table->unsignedBigInteger('profesor_id');
-            $table->foreign('profesor_id')->references('id')->on('profesores');
+            $table->unsignedBigInteger('profesor_id')->nullable();
+            $table->foreign('profesor_id')->references('id')->on('profesores')->onDelete('set null');
 
             $table->unsignedBigInteger('grado_id');
-            $table->foreign('grado_id')->references('id')->on('grados');
+            $table->foreign('grado_id')->references('id')->on('grados')->onDelete('cascade');
         });
     }
 

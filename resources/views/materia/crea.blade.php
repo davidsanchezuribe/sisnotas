@@ -12,6 +12,7 @@
     <div class="form-group">
         <label for="teacher">Seleccionar profesor</label>
         <select name="teacher" class="form-control" id="teacher">
+            <option value = 0>---</option>
             @foreach($data["teachers"] as $teacher)
                 <option value = {{ $teacher->getId() }}>{{ $teacher->getNombre() }}</option>
             @endforeach

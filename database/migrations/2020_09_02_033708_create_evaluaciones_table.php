@@ -21,7 +21,7 @@ class CreateEvaluacionesTable extends Migration
             $table->smallInteger('porcentaje')->unsigned();
 
             $table->unsignedBigInteger('materia_id');
-            $table->foreign('materia_id')->references('id')->on('materias');
+            $table->foreign('materia_id')->references('id')->on('materias')->onDelete('cascade');
         });
     }
 

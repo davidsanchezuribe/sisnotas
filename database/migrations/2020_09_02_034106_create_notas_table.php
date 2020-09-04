@@ -19,10 +19,10 @@ class CreateNotasTable extends Migration
             $table->float('valor');
 
             $table->unsignedBigInteger('estudiante_id');
-            $table->foreign('estudiante_id')->references('id')->on('estudiantes');
+            $table->foreign('estudiante_id')->references('id')->on('estudiantes')->onDelete('cascade');
 
             $table->unsignedBigInteger('evaluacion_id');
-            $table->foreign('evaluacion_id')->references('id')->on('evaluaciones');
+            $table->foreign('evaluacion_id')->references('id')->on('evaluaciones')->onDelete('cascade');
         });
     }
 

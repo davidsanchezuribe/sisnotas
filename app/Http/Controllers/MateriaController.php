@@ -24,7 +24,7 @@ class MateriaController extends Controller
         ]);
         $nombre = $request->input("name");
         $grado_id = $request->input("grado");
-        $profesor_id = $request->input("teacher");
+        $profesor_id = $request->input("teacher") == 0 ? null : $request->input("teacher");
 
         Materia::create(['nombre' => $nombre, 'profesor_id' => $profesor_id, 'grado_id' => $grado_id]);
         return back()->with('success','Item created successfully!');
