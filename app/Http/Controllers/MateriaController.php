@@ -10,8 +10,8 @@ class MateriaController extends Controller
 {
     public function create()
     {
-        $data = []; //to be sent to the view
-        $data["title"] = __('messages.courses.title');
+        $data = [];
+        $data["title"] = __('messages.courses.createTitle');
         $data["teachers"] = Profesor::all();
         $data["grados"] = Grado::all();
         return view('materia.crea') -> with("data", $data);
@@ -29,7 +29,35 @@ class MateriaController extends Controller
         Materia::create(['nombre' => $nombre, 'profesor_id' => $profesor_id, 'grado_id' => $grado_id]);
         return back()->with('success','Item created successfully!');
     }
+
+    public function list()
+    {
+        $data = [];
+        $data["title"] = __('messages.courses.listTitle');
+        $data["materias"] = Materia::query()
+            ->select(['id', 'nombre', 'grado_id', 'profesor_id'])
+            ->with(['profesor:id,nombre','grado:id,nombre'])
+            ->paginate();
+        return view('materia.lista') -> with("data", $data);
+    }
+    public function show($id)
+    {
+
+
+        $data = [];
+        $data["title"] = __('messages.courses.listTitle');
+        $data["id"] = $id;
+        
+        //$product = Product::findOrFail($id);
+        //$listOfSizes = array("XS","S","M","L","XL");
+    
+        //$data["title"] = $product->getName();
+        //$data["product"] = $product;
+        //$data["sizes"] = $listOfSizes;
+        return view('materia.muestra')->with("data", $data);
+    }
 }
+
 
 /*
 class ProductController extends Controller

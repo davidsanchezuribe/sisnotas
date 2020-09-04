@@ -40,9 +40,9 @@ class Materia extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function profesore()
+    public function profesor()
     {
-        return $this->belongsTo('App\Profesore', 'profesor_id');
+        return $this->belongsTo('App\Profesor', 'profesor_id');
     }
 
     /**
