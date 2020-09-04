@@ -11,7 +11,7 @@ class MateriaController extends Controller
     public function create()
     {
         $data = []; //to be sent to the view
-        $data["title"] = "Crear materia";
+        $data["title"] = __('messages.courses.title');
         $data["teachers"] = Profesor::all();
         $data["grados"] = Grado::all();
         return view('materia.crea') -> with("data", $data);
