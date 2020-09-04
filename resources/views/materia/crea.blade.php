@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.deimaster')
 
-@section("title", $data["title"])
-
-@section('content')
-    <h1>crea</h1>
+@section('deicontent')
+<div class="text-center">
+    <h1>Crear materias</h1>
+</div>
 @endsection
