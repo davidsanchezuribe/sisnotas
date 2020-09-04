@@ -10,13 +10,6 @@
             <div class="card">
                 <div class="card-header">@yield('title','Home Page')</div>
                 <div class="card-body">
-                    @if($errors->any())
-                        <ul id="errors">
-                            @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
                     @yield('deicontent')
                 </div>
             </div>

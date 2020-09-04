@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Materia;
+use App\Profesor;
+use App\Grado;
 use Illuminate\Http\Request;
 
 class MateriaController extends Controller
@@ -10,14 +12,26 @@ class MateriaController extends Controller
     {
         $data = []; //to be sent to the view
         $data["title"] = "Crear materia";
+        $data["teachers"] = Profesor::all();
+        $data["grados"] = Grado::all();
         return view('materia.crea') -> with("data", $data);
+    }
+
+    public function save(Request $request)
+    {
+        $request->validate([
+            "name" => "required",
+        ]);
+        $nombre = $request->input("name");
+        $grado_id = $request->input("grado");
+        $profesor_id = $request->input("teacher");
+
+        Materia::create(['nombre' => $nombre, 'profesor_id' => $profesor_id, 'grado_id' => $grado_id]);
+        return back()->with('success','Item created successfully!');
     }
 }
 
 /*
-
-
-
 class ProductController extends Controller
 {
     public function show($id)

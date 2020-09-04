@@ -41,4 +41,14 @@ class Profesor extends Model
     {
         return $this->hasMany('App\Materia', 'profesor_id');
     }
+
+    public function getId()
+    {
+        return $this -> id;
+    }
+
+    public function getNombre()
+    {
+        return $this -> nombre;
+    }
 }
