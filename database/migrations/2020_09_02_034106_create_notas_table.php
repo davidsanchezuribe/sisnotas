@@ -16,7 +16,7 @@ class CreateNotasTable extends Migration
         Schema::create('notas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->float('valor');
+            $table->float('valor')->nullable();
 
             $table->unsignedBigInteger('estudiante_id');
             $table->foreign('estudiante_id')->references('id')->on('estudiantes')->onDelete('cascade');

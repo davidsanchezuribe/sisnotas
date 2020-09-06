@@ -5,6 +5,7 @@ use App\Materia;
 use App\Profesor;
 use App\Grado;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UtilController;
 
 class MateriaController extends Controller
 {
@@ -40,15 +41,21 @@ class MateriaController extends Controller
             ->paginate();
         return view('materia.lista') -> with("data", $data);
     }
+
     public function show($id)
     {
-
-
         $data = [];
-        $data["title"] = __('messages.courses.listTitle');
+
         $data["id"] = $id;
         
-        //$product = Product::findOrFail($id);
+        $materia = Materia::find($id);
+        if ($materia == null) {
+            $notFoundTitle = __('messages.util.modelNotFound.courseT');
+            $notFoundObject = __('messages.util.modelNotFound.course'); 
+            return UtilController::modelNotFound($id, $notFoundTitle, $notFoundObject);
+        }
+
+        $data["title"] = __('messages.courses.listTitle');
         //$listOfSizes = array("XS","S","M","L","XL");
     
         //$data["title"] = $product->getName();

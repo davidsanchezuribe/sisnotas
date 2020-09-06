@@ -16,4 +16,13 @@ return [
         'nullTeacherT' => 'Non Assigned Teacher',
         'showTitle' => 'Course Details',
     ],
+    'util' => [
+        'modelNotFound' => [
+            'courseT' => 'Course not found',
+            'course' => 'Course with id ',
+            'notFound' => ' has not been found.',
+            'lookInstead' => ' Look a cat instead!',
+        ],
+
+    ],
 ];
