@@ -58,4 +58,18 @@ class Materia extends Model
         return $this -> grado;
     }
 
+    public function getNombre()
+    {
+        return $this -> nombre;
+    }
+
+    public function getProfesor_id()
+    {
+        return $this -> profesor_id;
+    }  
+     
+    public function getGrado_id()
+    {
+        return $this -> grado_id;
+    }  
 }

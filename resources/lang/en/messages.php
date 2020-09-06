@@ -7,7 +7,8 @@ return [
         'requiredL' => 'field required*',
         'teacherL' => 'Select Teacher',
         'levelL' => 'Select Level',
-        'createB' => 'Crear',
+        'createB' => 'Create',
+        'sCreate' => 'Item created successfully',
         'listTitle' => 'Course List',
         'idT' => 'id',
         'nameT' => 'name',
@@ -15,6 +16,12 @@ return [
         'teacherT' => 'teacher',
         'nullTeacherT' => 'Non Assigned Teacher',
         'showTitle' => 'Course Details',
+        'idL' => 'Course id: ',
+        'deleteB' => 'Delete',
+        'resetB' => 'Reset',
+        'updateB' => 'Update',
+        'sDelete' => 'Item deleted successfully',
+        'sUpdate' => 'Item updated successfully',
     ],
     'util' => [
         'modelNotFound' => [

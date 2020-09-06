@@ -28,7 +28,7 @@ class MateriaController extends Controller
         $profesor_id = $request->input("teacher") == 0 ? null : $request->input("teacher");
 
         Materia::create(['nombre' => $nombre, 'profesor_id' => $profesor_id, 'grado_id' => $grado_id]);
-        return back()->with('success','Item created successfully!');
+        return back()->with('success', __('messages.courses.sCreate'));
     }
 
     public function list()
@@ -54,14 +54,42 @@ class MateriaController extends Controller
             $notFoundObject = __('messages.util.modelNotFound.course'); 
             return UtilController::modelNotFound($id, $notFoundTitle, $notFoundObject);
         }
-
-        $data["title"] = __('messages.courses.listTitle');
-        //$listOfSizes = array("XS","S","M","L","XL");
-    
-        //$data["title"] = $product->getName();
-        //$data["product"] = $product;
-        //$data["sizes"] = $listOfSizes;
+        $data["title"] = __('messages.courses.showTitle');
+        $data["teachers"] = Profesor::all();
+        $data["grados"] = Grado::all();
+        $data["nombre"] = $materia->getNombre();
+        $data["profesor_id"] = $materia->getProfesor_id();
+        $data["grado_id"] = $materia->getGrado_id();
+        //dd($data["profesor_id"]);
         return view('materia.muestra')->with("data", $data);
+    }
+    public function updateordelete(Request $request)
+    {
+        $id = $request->input("id");
+        switch ($request->input('action')) {
+            case 'delete':
+                Materia::destroy($id);
+                return redirect()->route("materia.list")->with('success', __('messages.courses.sDelete'));
+                break;
+    
+            case 'update':
+                $request->validate([
+                    "name" => "required",
+                ]);
+                $nombre = $request->input("name");
+                $profesor_id = $request->input("teacher") == 0 ? null : $request->input("teacher");
+                Materia::where('id', $id)->update(['nombre' => $nombre, 'profesor_id' => $profesor_id]);
+                return redirect()->back()->with('success', __('messages.courses.sUpdate'));
+                break;
+        }
+
+
+        /*
+        
+        $grado_id = $request->input("grado");
+
+        Materia::create(['nombre' => $nombre, 'profesor_id' => $profesor_id, 'grado_id' => $grado_id]);
+        return back()->with('success','Item created successfully!');*/
     }
 }
 

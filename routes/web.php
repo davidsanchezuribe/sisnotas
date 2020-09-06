@@ -23,6 +23,8 @@ Route::get('/materia/muestra/{id}', 'MateriaController@show')->name("materia.sho
 
 Route::post('/materia/guarda', 'MateriaController@save')->name("materia.save");
 
+Route::post('/materia/actualizaoborra', 'MateriaController@updateordelete')->name("materia.updateordelete");
+
 Route::post('/materia/actualiza', 'MateriaController@update')->name("materia.update");
 
 Route::get('/evaluacion/gestiona', 'EvaluacionController@admin')->name("evaluacion.admin");
