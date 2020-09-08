@@ -50,7 +50,7 @@ class Materia extends Model
      */
     public function evaluaciones()
     {
-        return $this->hasMany('App\Evaluacione');
+        return $this->hasMany('App\Evaluacion');
     }
 
     public function getGrado()
@@ -71,5 +71,14 @@ class Materia extends Model
     public function getGrado_id()
     {
         return $this -> grado_id;
-    }  
+    }
+    
+    public function evaluated(){
+        $exams = $this->hasMany('App\Evaluacion')->getResults();
+        $total = 0;
+        foreach($exams as $exam){
+            $total += $exam -> getPorcentaje();
+        }
+        return $total;    
+    }
 }

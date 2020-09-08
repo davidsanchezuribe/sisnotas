@@ -19,9 +19,33 @@ return [
         'idL' => 'Course id: ',
         'deleteB' => 'Delete',
         'resetB' => 'Reset',
+        'scheduleB' => 'Schedule Assessments',
+        'gradesB' => 'Grades Report',
         'updateB' => 'Update',
         'sDelete' => 'Item deleted successfully',
         'sUpdate' => 'Item updated successfully',
+    ],
+    'exams' => [
+        'createTitle' => 'Add Test',
+        'updateTitle' => 'Update Tests',
+        'levelL' => 'Level: ',
+        'courseL' => 'Course: ',
+        'teacherL' => 'Teacher: ',
+        'idT' => 'id',
+        'descT' => 'description',
+        'dateT' => 'date',
+        'percentT' => 'percent',
+        'fullL' => 'Assessment scheduling is complete',
+        'coursesB' => 'Back to Courses',
+        'addB' => 'Add Exam',
+        'descL' => 'Test Description',
+        'requiredL' => 'field required*',
+        'dateL' => 'Test Date',
+        'percL' => 'Test Percent',
+        'deleteT' => 'delete',
+        'resetB' => 'Reset',
+        'updateB' => 'Update',
+        'sCreate' => 'Item added successfully',
     ],
     'util' => [
         'modelNotFound' => [
@@ -29,7 +53,9 @@ return [
             'course' => 'Course with id ',
             'notFound' => ' has not been found.',
             'lookInstead' => ' Look a cat instead!',
-        ],
 
+
+        ],
     ],
+
 ];

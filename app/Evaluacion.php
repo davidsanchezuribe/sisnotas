@@ -52,12 +52,24 @@ class Evaluacion extends Model
         return $this->hasMany('App\Nota', 'evaluacion_id');
     }
 
+    public function getId(){
+        return $this -> id;
+    }
+
     public function getMateria(){
         return $this -> materia;
     }
 
     public function getFecha(){
         return $this -> fecha;
-    }  
+    } 
+
+    public function getDesc(){
+        return $this -> desc;
+    }
+
+    public function getPorcentaje(){
+        return $this -> porcentaje;
+    }   
 
 }

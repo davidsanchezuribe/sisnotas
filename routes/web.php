@@ -25,12 +25,14 @@ Route::post('/materia/guarda', 'MateriaController@save')->name("materia.save");
 
 Route::post('/materia/actualizaoborra', 'MateriaController@updateordelete')->name("materia.updateordelete");
 
-Route::post('/materia/actualiza', 'MateriaController@update')->name("materia.update");
+Route::get('/evaluacion/crea/{id}', 'EvaluacionController@create')->name("evaluacion.create");
 
-Route::get('/evaluacion/gestiona', 'EvaluacionController@admin')->name("evaluacion.admin");
+Route::post('/evaluacion/guarda', 'EvaluacionController@save')->name("evaluacion.save");
 
-Route::post('/evaluacion/insertualiza', 'EvaluacionController@upsert')->name("evaluacion.upsert");
+Route::get('/evaluacion/actualiza/{id}', 'EvaluacionController@update')->name("evaluacion.update");
+
+Route::post('/evaluacion/actualizaoborra', 'EvaluacionController@updateordelete')->name("evaluacion.updateordelete");
 
 Route::get('/nota/gestiona', 'NotaController@admin')->name("nota.admin");
 
-Route::post('/nota/insertualiza', 'NotaController@upsert')->name("nota.upsert");
+Route::get('/nota/insertualiza', 'NotaController@upsert')->name("nota.upsert");

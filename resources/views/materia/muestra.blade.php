@@ -31,8 +31,10 @@
             @endforeach
         </select>
     </div>
-    <button type="submit" name="action" value="delete" class="btn btn-danger">@lang('messages.courses.deleteB')</button>
-    <button type="reset" class="btn btn-secundary">@lang('messages.courses.resetB')</button>
-    <button type="submit" name="action" value="update" class="btn btn-primary">@lang('messages.courses.updateB')</button>
+    <button type="submit" name="action" value="delete" class="btn btn-danger mt-1">@lang('messages.courses.deleteB')</button>
+    <button type="reset" class="btn btn-secundary mt-1">@lang('messages.courses.resetB')</button>
+    <button type="submit" name="action" value="schedule" class="btn btn-primary mt-1">@lang('messages.courses.scheduleB')</button>
+    <button type="submit" name="action" value="report" class="btn btn-primary mt-1">@lang('messages.courses.gradesB')</button>
+    <button type="submit" name="action" value="update" class="btn btn-primary mt-1">@lang('messages.courses.updateB')</button>
 </form>    
 @endsection
