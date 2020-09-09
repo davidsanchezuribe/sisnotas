@@ -37,6 +37,7 @@ return [
         'percentT' => 'percent',
         'fullL' => 'Assessment scheduling is complete',
         'coursesB' => 'Back to Courses',
+        'modifyB' => 'Modify assesments',
         'addB' => 'Add Exam',
         'descL' => 'Test Description',
         'requiredL' => 'field required*',
@@ -45,7 +46,13 @@ return [
         'deleteT' => 'delete',
         'resetB' => 'Reset',
         'updateB' => 'Update',
-        'sCreate' => 'Item added successfully',
+        'sCreate' => 'Evaluation added successfully',
+        'sDelete' => 'Evaluation deleted successfully',
+        'vEmptyDesc' => 'Description of evaluation ',
+        'vNotEmpty' => ' should not be empty',
+        'vEmptyDate' => 'Date of evaluation ',
+        'vMax100' => 'Evaluation percents must not exceed 100%',
+        'sUpdate' => 'Evaluations updated successfully',
     ],
     'util' => [
         'modelNotFound' => [

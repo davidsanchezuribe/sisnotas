@@ -26,10 +26,10 @@
     @endforeach
   </tbody>
 </table>
-<form class="form-horizontal" method="POST" action="{{ route('evaluacion.save') }}">
+<form class="form-horizontal" method="post" action="{{ route('evaluacion.save') }}">
     @csrf
+    <input hidden type="text" name="materia_id" value="{{$data['id']}}">
     @if ($data["totalEvaluado"] < 100)
-      <input hidden type="text" name="materia_id" value="{{$data['id']}}">
       <input hidden type="text" name="totalEvaluado" value="{{$data['totalEvaluado']}}">
       <div class="form-group">
         <label for="desc">@lang('messages.exams.descL')</label>
@@ -53,6 +53,7 @@
       </div>
     @endif
       <button type="submit" name="action" value="back" class="btn btn-secundary my-1">@lang('messages.exams.coursesB')</button>
+      <button type="submit" name="action" value="modify" class="btn btn-primary my-1">@lang('messages.exams.modifyB')</button>
     @if ($data["totalEvaluado"] < 100)
       <button type="submit" name="action" value="add" class="btn btn-primary my-1">@lang('messages.exams.addB')</button>
     @else

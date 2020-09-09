@@ -73,7 +73,7 @@ class MateriaController extends Controller
                 return redirect()->route("materia.list")->with('success', __('messages.courses.sDelete'));
                 break;
             case 'schedule':
-                dd('schedule');
+                return redirect()->route("evaluacion.create", ["id" => $id]);
                 break;
             case 'report':
                 dd('report');

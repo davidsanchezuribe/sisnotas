@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Materia;
 use App\Evaluacion;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class EvaluacionController extends Controller
                 $maxPercent = 100 - $evaluated;
                 $request->validate([
                     "desc" => "required|max:64",
-                    "fecha" => "required|after_or_equal:today",
+                    "fecha" => "required",
                     "porcentaje" => "required|numeric|min:1|max:$maxPercent",
                 ]);
                 Evaluacion::create($request->only([
@@ -50,6 +51,10 @@ class EvaluacionController extends Controller
                     "materia_id",
                 ]));
                 return back()->with('success',__('messages.exams.sCreate'));
+                break;
+            case 'modify':
+                $id = $request->input("materia_id");
+                return redirect()->route("evaluacion.update", ['id' => $id]);
                 break;
         }
     }
@@ -72,17 +77,54 @@ class EvaluacionController extends Controller
         $data["evaluaciones"] = $materia->evaluaciones()->getResults();
         return view('evaluacion.actualiza')->with("data", $data);
     }
+
     public function updateordelete(Request $request)
     {
+        $materia_id = $request->input('materia_id');
         switch ($request->input('action')) {
             case 'back':
                 return redirect()->route("materia.list");
                 break;
+            case 'add':  
+                return redirect()->route("evaluacion.create", ['id' => $materia_id]);
+                break;
             case 'update':
-                return back()->with('success','Item created successfully!');
+                $evaluaciones = Materia::find($materia_id)->hasMany('App\Evaluacion')->getResults();
+                $totalEvaluado = 0;
+                $data = [];
+                foreach($evaluaciones as $evaluacion){
+                    $idEvaluacion = $evaluacion->getId();
+                    $desc = $request->input(["desc" . $idEvaluacion]);
+                    if(empty($desc)){
+                        return back()->withErrors(__('messages.exams.vEmptyDesc') . $idEvaluacion . __('messages.exams.vNotEmpty'));
+                    }
+                    $fecha = $request->input(["fecha" . $idEvaluacion]);
+                    $porcentaje = $request->input(["porcentaje" . $idEvaluacion]);
+                    if(empty($porcentaje)){
+                        return back()->withErrors(__('messages.exams.vEmptyDate') . $idEvaluacion . __('messages.exams.vNotEmpty'));
+                    }
+                    $newEvaluacion = ["desc" => $desc, "fecha" => $fecha, "porcentaje" => $porcentaje];
+                    $customRequest = new Request($newEvaluacion);
+                    $customRequest->validate([
+                        "desc" => "required|max:64",
+                        "fecha" => "required",
+                        "porcentaje" => "required|numeric|min:1",
+                    ]);
+                    $data[$idEvaluacion] = $newEvaluacion;
+                    $totalEvaluado += $porcentaje;
+                }
+                if($totalEvaluado > 100){
+                    return back()->withErrors(__('messages.exams.vMax100'));
+                }
+                foreach($data as $id => $evaluacion){
+                    Evaluacion::find($id)->update($evaluacion);
+                }
+                return back()->with('success',__('messages.exams.sUpdate'));
                 break;
             default:
-                dd('delete');
+                $id = substr($request->input('action'), 1);
+                Evaluacion::destroy($id);
+                return back()->with('success',__('messages.exams.sDelete'));
                 break;
         }
 
