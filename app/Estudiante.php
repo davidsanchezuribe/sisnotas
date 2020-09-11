@@ -50,4 +50,9 @@ class Estudiante extends Model
     {
         return $this -> id;
     }
+
+    public function getNombre()
+    {
+        return $this -> nombre;
+    }
 }

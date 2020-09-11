@@ -76,7 +76,7 @@ class MateriaController extends Controller
                 return redirect()->route("evaluacion.create", ["id" => $id]);
                 break;
             case 'report':
-                dd('report');
+                return redirect()->route("nota.manage", ["id" => $id]);
                 break;    
             case 'update':
                 $request->validate([

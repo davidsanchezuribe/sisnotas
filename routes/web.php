@@ -33,6 +33,6 @@ Route::get('/evaluacion/actualiza/{id}', 'EvaluacionController@update')->name("e
 
 Route::post('/evaluacion/actualizaoborra', 'EvaluacionController@updateordelete')->name("evaluacion.updateordelete");
 
-Route::get('/nota/gestiona', 'NotaController@admin')->name("nota.admin");
+Route::get('/nota/gestiona/{id}', 'NotaController@manage')->name("nota.manage");
 
-Route::get('/nota/insertualiza', 'NotaController@upsert')->name("nota.upsert");
+Route::post('/nota/actualiza', 'NotaController@update')->name("nota.update");

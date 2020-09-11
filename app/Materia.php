@@ -72,6 +72,10 @@ class Materia extends Model
     {
         return $this -> grado_id;
     }
+
+    public function getId(){
+        return $this->id;
+    }
     
     public function evaluated(){
         $exams = $this->hasMany('App\Evaluacion')->getResults();

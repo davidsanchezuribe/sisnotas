@@ -36,5 +36,5 @@
     <button type="submit" name="action" value="add" class="btn btn-secundary my-1">@lang('messages.exams.addB')</button>
     <button type="reset" class="btn btn-secundary my-1">@lang('messages.exams.resetB')</button>    
     <button type="submit" name="action" value="update" class="btn btn-primary my-1">@lang('messages.exams.updateB')</button>             
-</form
+</form>
 @endsection

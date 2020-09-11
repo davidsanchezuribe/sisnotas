@@ -70,6 +70,19 @@ class Evaluacion extends Model
 
     public function getPorcentaje(){
         return $this -> porcentaje;
-    }   
+    }
+    
+    public function createGrades(){
+        $idEvaluacion = $this -> id;
+        $idEstudiantes = $this-> materia -> getGrado() -> estudiantes() -> pluck('id') ->toArray();
+        foreach($idEstudiantes as $idEstudiante){  
+            Nota::create([
+                'evaluacion_id' => $idEvaluacion,
+                'estudiante_id' => $idEstudiante, 
+                'valor' => null,
+            ]);
+        }
+
+    }
 
 }

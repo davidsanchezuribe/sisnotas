@@ -43,4 +43,8 @@ class Nota extends Model
     {
         return $this->belongsTo('App\Evaluacione', 'evaluacion_id');
     }
+
+    public function getValue(){
+        return $this -> valor;
+    }
 }

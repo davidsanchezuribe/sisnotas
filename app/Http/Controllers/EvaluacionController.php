@@ -44,12 +44,13 @@ class EvaluacionController extends Controller
                     "fecha" => "required",
                     "porcentaje" => "required|numeric|min:1|max:$maxPercent",
                 ]);
-                Evaluacion::create($request->only([
+                $result = Evaluacion::create($request->only([
                     "desc",
                     "fecha",
                     "porcentaje",
                     "materia_id",
                 ]));
+                $examId = $result->createGrades();
                 return back()->with('success',__('messages.exams.sCreate'));
                 break;
             case 'modify':
@@ -127,32 +128,6 @@ class EvaluacionController extends Controller
                 return back()->with('success',__('messages.exams.sDelete'));
                 break;
         }
-
-        return '<p>update or delete<p>';
-
+        return null;
     }
 }
-
-/*
-    public function show($id)
-    {
-        $data = [];
-
-        $data["id"] = $id;
-        
-        $materia = Materia::find($id);
-        if ($materia == null) {
-            $notFoundTitle = __('messages.util.modelNotFound.courseT');
-            $notFoundObject = __('messages.util.modelNotFound.course'); 
-            return UtilController::modelNotFound($id, $notFoundTitle, $notFoundObject);
-        }
-        $data["title"] = __('messages.courses.showTitle');
-        $data["teachers"] = Profesor::all();
-        $data["grados"] = Grado::all();
-        $data["nombre"] = $materia->getNombre();
-        $data["profesor_id"] = $materia->getProfesor_id();
-        $data["grado_id"] = $materia->getGrado_id();
-        //dd($data["profesor_id"]);
-        return view('materia.muestra')->with("data", $data);
-    }
-*/

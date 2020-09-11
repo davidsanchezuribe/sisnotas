@@ -54,14 +54,23 @@ return [
         'vMax100' => 'Evaluation percents must not exceed 100%',
         'sUpdate' => 'Evaluations updated successfully',
     ],
+    'grades' => [
+        'manageTitle' => 'Manage Grades',
+        'studentCoursesL' => 'Students',
+        'coursesB' => 'Back to Courses',
+        'resetB' => 'Reset',
+        'updateB' => 'Update',
+        'of' => 'of',
+        'numeric' => 'should be a number',
+        'min' => 'should be min 0.0',
+        'max' => 'should be max 5.0',
+    ],
     'util' => [
         'modelNotFound' => [
             'courseT' => 'Course not found',
             'course' => 'Course with id ',
             'notFound' => ' has not been found.',
             'lookInstead' => ' Look a cat instead!',
-
-
         ],
     ],
 
