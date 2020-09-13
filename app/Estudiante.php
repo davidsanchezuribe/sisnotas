@@ -55,4 +55,19 @@ class Estudiante extends Model
     {
         return $this -> nombre;
     }
+    
+    public function getApellido()
+    {
+        return $this -> apellido;
+    }
+    
+    public function getTelefono()
+    {
+        return $this -> telefono;
+    }
+
+    public function getCedula()
+    {
+        return $this -> cedula;
+    }
 }

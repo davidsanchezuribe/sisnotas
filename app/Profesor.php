@@ -51,4 +51,14 @@ class Profesor extends Model
     {
         return $this -> nombre;
     }
+    
+    public function getApellido()
+    {
+        return $this -> apellido;
+    }
+    
+    public function getCedula()
+    {
+        return $this -> cedula;
+    }
 }
