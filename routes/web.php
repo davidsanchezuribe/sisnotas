@@ -25,6 +25,8 @@ Route::post('/materia/guarda', 'MateriaController@save')->name("materia.save");
 
 Route::post('/materia/actualizaoborra', 'MateriaController@updateordelete')->name("materia.updateordelete");
 
+Route::post('/materia/busca', 'MateriaController@query')->name("materia.query");
+
 Route::get('/evaluacion/crea/{id}', 'EvaluacionController@create')->name("evaluacion.create");
 
 Route::post('/evaluacion/guarda', 'EvaluacionController@save')->name("evaluacion.save");

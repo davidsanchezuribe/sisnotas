@@ -24,6 +24,8 @@ return [
         'updateB' => 'Update',
         'sDelete' => 'Item deleted successfully',
         'sUpdate' => 'Item updated successfully',
+        'coursesE' => 'Courses with parameters specified are not found',
+        'filterB' => 'Filter courses',
     ],
     'exams' => [
         'createTitle' => 'Add Test',
@@ -68,7 +70,11 @@ return [
     'util' => [
         'modelNotFound' => [
             'courseT' => 'Course not found',
+            'teacherT' => 'Teacher not found',
+            'levelT' => 'Level not found',            
             'course' => 'Course with id ',
+            'teacher' => 'Teacher with id ',
+            'level' => 'Level with id ',
             'notFound' => ' has not been found.',
             'lookInstead' => ' Look a cat instead!',
         ],

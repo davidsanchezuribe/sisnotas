@@ -31,16 +31,55 @@ class MateriaController extends Controller
         return back()->with('success', __('messages.courses.sCreate'));
     }
 
-    public function list()
+    public function list(Request $request)
     {
+        $materias = Materia::query()
+            ->select(['id', 'nombre', 'grado_id', 'profesor_id'])
+           ->with(['profesor:id,nombre','grado:id,nombre']);
+        $profesor_id = 0;
+        if ($request->has('t')) {
+            $profesor_id=$request->input('t');
+            $profesor = Profesor::find($profesor_id);
+            if($profesor != null){
+                $materias = $materias->where('profesor_id', $profesor_id);
+            } else{
+                $notFoundTitle = __('messages.util.modelNotFound.teacherT');
+                $notFoundObject = __('messages.util.modelNotFound.teacher'); 
+                return UtilController::modelNotFound($profesor_id, $notFoundTitle, $notFoundObject);
+            }
+        }
+        $grado_id=0;
+        if ($request->has('l')) {
+            $grado_id=$request->input('l');
+            $grado = Grado::find($grado_id);
+            if($grado != null){
+                $materias = $materias->where('grado_id', $grado_id);
+            } else{
+                $notFoundTitle = __('messages.util.modelNotFound.levelT');
+                $notFoundObject = __('messages.util.modelNotFound.level'); 
+                return UtilController::modelNotFound($grado_id, $notFoundTitle, $notFoundObject);
+            }
+        }
+
         $data = [];
         $data["title"] = __('messages.courses.listTitle');
-        $data["materias"] = Materia::query()
-            ->select(['id', 'nombre', 'grado_id', 'profesor_id'])
-            ->with(['profesor:id,nombre','grado:id,nombre'])
-            ->paginate();
+        $data["materias"] = $materias->paginate();
+        $data["teacher_id"] = $profesor_id;
+        $data["teachers"]= Profesor::all();
+        $data["level_id"] = $grado_id;
+        $data["levels"] = Grado::all();
         return view('materia.lista') -> with("data", $data);
     }
+
+    public function query(Request $request)
+    {
+        $teacher = $request->input('teacher');
+        if($teacher == 0) $teacher = null;
+        $level = $request->input('level');
+        if($level == 0) $level = null;
+        return redirect()->route("materia.list", ['t' => $teacher, 'l' => $level]);        
+    }
+
 
     public function show($id)
     {
