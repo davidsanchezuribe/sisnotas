@@ -79,5 +79,18 @@ return [
             'lookInstead' => ' Look a cat instead!',
         ],
     ],
+    'navbar' => [
+        'coursesL' => 'Courses',
+        'courseCreateL' => 'Create Course',
+        'courseListL' => 'List Courses',
+        'courseShowL' => 'Show Course 20 (example)',
+        'evaluationsL' => 'Evaluations',
+        'evaluationCreateL' => 'Create Evaluation of Course 20 (example)',
+        'evaluationUpdateL' => 'Update Evaluations of Course 20 (example)',
+        'gradesL' => 'Grades',
+        'manageGradesL' => 'Manage Grades of Course 20 (example)',
+                  
+
+    ],
 
 ];

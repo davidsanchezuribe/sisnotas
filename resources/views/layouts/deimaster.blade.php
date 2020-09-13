@@ -16,34 +16,34 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Materia
+            @lang('messages.navbar.coursesL')
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('materia.create')}}">Crea</a>
-          <a class="dropdown-item" href="{{route('materia.list')}}">Lista</a>
-          <a class="dropdown-item" href="{{route('materia.show', ['id' => 20])}}">Muestra (ejemplo)</a>
+          <a class="dropdown-item" href="{{route('materia.create')}}">@lang('messages.navbar.courseCreateL')</a>
+          <a class="dropdown-item" href="{{route('materia.list')}}">@lang('messages.navbar.courseListL')</a>
+          <a class="dropdown-item" href="{{route('materia.show', ['id' => 20])}}">@lang('messages.navbar.courseShowL')</a>
         </div>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Evaluacion
+            @lang('messages.navbar.evaluationsL')
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('evaluacion.create', ['id' => 20])}}">Crea (ejemplo)</a>
-          <a class="dropdown-item" href="{{route('evaluacion.update', ['id' => 20])}}">Actualiza (ejemplo)</a>
+          <a class="dropdown-item" href="{{route('evaluacion.create', ['id' => 20])}}">@lang('messages.navbar.evaluationCreateL')</a>
+          <a class="dropdown-item" href="{{route('evaluacion.update', ['id' => 20])}}">@lang('messages.navbar.evaluationUpdateL')</a>
         </div>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Nota
+            @lang('messages.navbar.gradesL')
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('nota.manage', ['id' => 20])}}">Gestiona (ejemplo)</a>
+          <a class="dropdown-item" href="{{route('nota.manage', ['id' => 20])}}">@lang('messages.navbar.manageGradesL')</a>
         </div>
       </li>
-      
+
     </ul>
   </div>
 </nav>
