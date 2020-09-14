@@ -38,3 +38,11 @@ Route::post('/evaluacion/actualizaoborra', 'EvaluacionController@updateordelete'
 Route::get('/nota/gestiona/{id}', 'NotaController@manage')->name("nota.manage");
 
 Route::post('/nota/actualiza', 'NotaController@update')->name("nota.update");
+
+
+# rutas Estudiantes
+Route::resource('/estudiantes', 'EstudianteController');
+
+
+# rutas Profesor
+Route::resource('/profesores', 'ProfesorController');

@@ -51,11 +51,11 @@
     </tr>
     @empty
     <div class="alert alert-primary" role="alert">
-    @lang('messages.courses.coursesE')
+        @lang('messages.courses.coursesE')
     </div>
     @endforelse
   </tbody>
 </table>
- 
+
 {{ $data['materias']->links() }}
 @endsection
