@@ -30,7 +30,7 @@ $ composer install
 ### Setup (Opcional) - Create an .env
 When you are done with installation, copy the `.env.example` file to `.env`
 ```
-$ cp .env . env.example
+$ cp  .env.example .env
 ```
 
 Generate the application key
