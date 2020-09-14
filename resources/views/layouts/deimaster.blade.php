@@ -19,29 +19,39 @@
             @lang('messages.navbar.coursesL')
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('materia.create')}}">@lang('messages.navbar.courseCreateL')</a>
-          <a class="dropdown-item" href="{{route('materia.list')}}">@lang('messages.navbar.courseListL')</a>
-          <a class="dropdown-item" href="{{route('materia.show', ['id' => 20])}}">@lang('messages.navbar.courseShowL')</a>
+            <a class="dropdown-item" href="{{route('materia.create')}}">@lang('messages.navbar.courseCreateL')</a>
+            <a class="dropdown-item" href="{{route('materia.list')}}">@lang('messages.navbar.courseListL')</a>
+            <a class="dropdown-item" href="{{route('materia.show', ['id' => 20])}}">@lang('messages.navbar.courseShowL')</a>
         </div>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            @lang('messages.navbar.evaluationsL')
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('evaluacion.create', ['id' => 20])}}">@lang('messages.navbar.evaluationCreateL')</a>
-          <a class="dropdown-item" href="{{route('evaluacion.update', ['id' => 20])}}">@lang('messages.navbar.evaluationUpdateL')</a>
-        </div>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              @lang('messages.navbar.studentsL')
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{route('estudiantes.create')}}">@lang('messages.navbar.studentCreateL')</a>
+              <a class="dropdown-item" href="{{route('estudiantes.index')}}">@lang('messages.navbar.studentListL')</a>
+          </div>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            @lang('messages.navbar.gradesL')
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('nota.manage', ['id' => 20])}}">@lang('messages.navbar.manageGradesL')</a>
-        </div>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              @lang('messages.navbar.evaluationsL')
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{route('evaluacion.create', ['id' => 20])}}">@lang('messages.navbar.evaluationCreateL')</a>
+              <a class="dropdown-item" href="{{route('evaluacion.update', ['id' => 20])}}">@lang('messages.navbar.evaluationUpdateL')</a>
+          </div>
+      </li>
+
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              @lang('messages.navbar.gradesL')
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{route('nota.manage', ['id' => 20])}}">@lang('messages.navbar.manageGradesL')</a>
+          </div>
       </li>
 
     </ul>
@@ -49,17 +59,17 @@
 </nav>
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            @include('util.message')
-            <div class="card">
-                <div class="card-header">@yield('title','Home Page')</div>
-                <div class="card-body">
-                    @yield('deicontent')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                @include('util.message')
+                <div class="card">
+                    <div class="card-header">@yield('title','Home Page')</div>
+                    <div class="card-body">
+                        @yield('deicontent')
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
