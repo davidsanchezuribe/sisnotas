@@ -18,7 +18,7 @@
             @forelse($data['estudiantes'] as $estudiante )
                 <tr>
                     <th scope="row">
-                        <a href="{{route('estudiantes.show', $estudiante)}}">
+                        <a href="{{route('estudiantes.edit', $estudiante)}}">
                             {{ $estudiante->getId() }}
                         </a>
                     </th>
