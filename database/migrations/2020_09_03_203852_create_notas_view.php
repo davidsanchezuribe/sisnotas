@@ -34,6 +34,6 @@ class CreateNotasView extends Migration
      */
     public function down()
     {
-        DB::statement("DROP VIEW notasView");
+        DB::statement("DROP VIEW notasview");
     }
 }

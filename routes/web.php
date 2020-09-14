@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MateriaController@list')->name("materia.list");
 
 Route::get('/materia/crea', 'MateriaController@create')->name("materia.create");
 
