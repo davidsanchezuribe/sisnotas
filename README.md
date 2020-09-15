@@ -50,6 +50,9 @@ $ php artisan migrate & php artisan migrate:refresh --seed
 $ php artisan serve
 ```
 
+### Basic Coding Standard
+* [PSR-coding-standard](https://github.com/davidsanchezuribe/sisnotas/blob/master/accepted/PSR-coding-standard.md) - Programming style guide
+
 ## Built With
 * [Laravel](https://laravel.com) - The PHP framework for building the API endpoints needed for the application
 
