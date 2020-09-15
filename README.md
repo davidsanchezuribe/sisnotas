@@ -52,6 +52,7 @@ $ php artisan serve
 
 ### Basic Coding Standard
 * [PSR-coding-standard](https://github.com/davidsanchezuribe/sisnotas/blob/master/accepted/PSR-coding-standard.md) - Programming style guide
+* [Rule-of-programming](https://github.com/davidsanchezuribe/sisnotas/tree/master/accepted) - Programming rule
 
 ### General documentation
 * [General documentation PDF](https://github.com/davidsanchezuribe/sisnotas/blob/master/README-Documentaci%C3%B3n_General.pdf) - General documentation
