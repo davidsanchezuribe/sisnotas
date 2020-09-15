@@ -54,7 +54,7 @@ $ php artisan serve
 * [PSR-coding-standard](https://github.com/davidsanchezuribe/sisnotas/blob/master/accepted/PSR-coding-standard.md) - Programming style guide
 
 ### General documentation
-* [General documentation PDF](https://github.com/davidsanchezuribe/sisnotas/blob/master/accepted/PSR-coding-standard.md) - General documentation
+* [General documentation PDF](https://github.com/davidsanchezuribe/sisnotas/blob/master/README-Documentaci%C3%B3n_General.pdf) - General documentation
 
 ## Built With
 * [Laravel](https://laravel.com) - The PHP framework for building the API endpoints needed for the application
