@@ -38,6 +38,15 @@ class EstudianteController extends Controller
     
     public function store(Request $request)
     {
+        
+         $request->validate([
+            "nombre" => "required",
+            "apellido" => "required",
+            "telefono" => "required",
+            "cedula" => "required",
+            "grado" => "required",
+        ]);
+        
          \App\Estudiante::create([
             'nombre' => $request->get('nombre'),
             'apellido' => $request->get('apellido'),

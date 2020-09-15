@@ -33,6 +33,12 @@ class ProfesorController extends Controller
 
     public function store(Request $request)
     {
+         $request->validate([
+            "nombre" => "required",
+            "apellido" => "required",
+            "cedula" => "required",
+         ]);
+        
         \App\Profesor::create([
             'nombre' => $request->get('nombre'),
             'apellido' => $request->get('apellido'),
