@@ -163,8 +163,25 @@ return [
         'evaluationUpdateL' => 'Update Evaluations of Course 20 (example)',
         'gradesL' => 'Grades',
         'manageGradesL' => 'Manage Grades of Course 20 (example)',
-                  
+        'levelL' => 'Level',
+        'levelCreateL' => 'Create Level',
+        'levelUpdateL' => 'Update Level',
+        'levelDeleteL' => 'Delete Level',
+        'levelListL' => 'List Levels',      
 
+    ],
+    'level'=>[
+        'manageTitle' => 'Manage Level',
+        'crearTitle'=>'Create level',
+        'updateTitle'=>'Update level',
+        'idT'=>'id',
+        'nameT'=>'name',
+        'optionsT'=>'options',
+        'btnEliminar'=>'Remove',
+        'btnActualizar'=>'Update',
+        'nameL'=>'Level name'
+
+ 
     ],
 
 ];

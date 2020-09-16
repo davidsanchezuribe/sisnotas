@@ -44,3 +44,13 @@ Route::resource('/estudiantes', 'EstudianteController');
 
 # rutas Profesor
 Route::resource('/profesores', 'ProfesorController');
+
+
+Route::get('/grado/lista', 'GradoController@lista')->name("grado.lista");
+Route::get('/grado/crear', 'GradoController@crear')->name("grado.crear");
+Route::post('/grado/save', 'GradoController@save')->name("grado.save");
+
+Route::get('/grado/delete/{id}', 'GradoController@delete')->name("grado.delete");
+Route::get('/grado/update/{id}', 'GradoController@update')->name("grado.update");
+Route::post('/grado/update/save/{id}', 'GradoController@saveUpdate')->name("grado.saveUpdate");
+

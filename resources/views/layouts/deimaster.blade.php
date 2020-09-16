@@ -63,6 +63,17 @@
               <a class="dropdown-item" href="{{route('nota.manage', ['id' => 20])}}">@lang('messages.navbar.manageGradesL')</a>
           </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @lang('messages.navbar.levelL')
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{route('grado.lista')}}">@lang('messages.navbar.levelListL')</a>
+          <a class="dropdown-item" href="{{route('grado.crear')}}">@lang('messages.navbar.levelCreateL')</a>
+
+        </div>
+       
+      </li>
 
     </ul>
   </div>
