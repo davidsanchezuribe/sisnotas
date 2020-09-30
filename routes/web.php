@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'MateriaController@list')->name("materia.list");
+//Route::get('/', 'MateriaController@list')->name("materia.list");
 
 Route::get('/materia/crea', 'MateriaController@create')->name("materia.create");
 
@@ -53,4 +53,10 @@ Route::post('/grado/save', 'GradoController@save')->name("grado.save");
 Route::get('/grado/delete/{id}', 'GradoController@delete')->name("grado.delete");
 Route::get('/grado/update/{id}', 'GradoController@update')->name("grado.update");
 Route::post('/grado/update/save/{id}', 'GradoController@saveUpdate')->name("grado.saveUpdate");
+
+
+// login
+Auth::routes();
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
