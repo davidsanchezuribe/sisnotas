@@ -8,10 +8,35 @@ use App\Estudiante;
 use App\Evaluacion;
 use Validator;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 class NotaController extends Controller
 {
+
+    public function index()
+    {
+        return  $this->estudiantesAprobados();
+    }
+
+    protected function estudiantesAprobados() {
+        
+        $estudiantesAprobados = DB::table('estudiantes')
+                              ->join('evaluaciones', function ($join) {
+                                  $join->on('estudiantes.id', '=', 'estudiantes.id')
+                                       ->where('evaluaciones.id', [4]);
+                              })
+                              ->join('notas', function ($join) {
+                                  $join->on('estudiantes.id', '=', 'notas.id')
+                                       ->where('notas.valor', '>=', 4.0);
+                              })
+                              ->select('estudiantes.nombre','evaluaciones.desc', 'notas.valor')
+                              ->get();
+        
+        echo json_encode($estudiantesAprobados);
+    }
+    
     public function manage($id)
     {
         $data = [];
