@@ -32,9 +32,9 @@ class NotaController extends Controller
                                        ->where('notas.valor', '>=', 4.0);
                               })
                               ->select('estudiantes.nombre','evaluaciones.desc', 'notas.valor')
-                              ->get();
+                              ->get()->toJson(JSON_PRETTY_PRINT);
         
-        echo json_encode($estudiantesAprobados);
+        return json_decode($estudiantesAprobados, true);  // true == 200  
     }
     
     public function manage($id)
