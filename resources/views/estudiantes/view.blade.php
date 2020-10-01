@@ -31,10 +31,10 @@
                         
                         <form method="POST" action="{{ route('estudiantes.destroy', $estudiante) }}">
                             {{ csrf_field() }} {{ method_field('delete') }}
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm">@lang('messages.students.btnDelete')</button>
                         </form>
                         <td>
-                            <a href="{{route('estudiantes.edit', $estudiante)}}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{{route('estudiantes.edit', $estudiante)}}" class="btn btn-warning btn-sm">@lang('messages.students.btnUpdate')</a>
                         </td>
 
                     </td>
