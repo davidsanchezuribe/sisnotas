@@ -97,7 +97,7 @@ class NotaController extends Controller
                             'max' => $msgPrefix . __('messages.grades.max'),
                         ];
                         $rules = [
-                            'numeric|min:0|max:5|nullable',
+                            'numeric|min:0|max:'. env('NOTE_MAX_VALUE', 5) .'|nullable',
                         ];
                         $validator = Validator::make([$grade], $rules, $messages);
                         if ($validator->fails()) {

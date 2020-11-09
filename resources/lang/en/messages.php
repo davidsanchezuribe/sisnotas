@@ -133,7 +133,7 @@ return [
         'of' => 'of',
         'numeric' => 'should be a number',
         'min' => 'should be min 0.0',
-        'max' => 'should be max 5.0',
+        'max' => 'should be max ' . env('NOTE_MAX_VALUE', 5),
     ],
     'util' => [
         'modelNotFound' => [
