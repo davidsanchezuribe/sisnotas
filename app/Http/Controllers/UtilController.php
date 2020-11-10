@@ -45,4 +45,15 @@ class UtilController extends Controller
 
         return $data['name'] . ' ' . $data['main']['temp'] . 'º ' . $data['weather'][0]['main'];
     }
+    
+    static public function apiAliada()
+    {
+        
+        $uri = 'http://www.sketchdesign.tk/public/api/designs';
+        $client = new Client();
+        $response = $client->request('GET', $uri);
+        $data = json_decode($response->getBody(), true);
+
+        return $data;
+    }
 }
