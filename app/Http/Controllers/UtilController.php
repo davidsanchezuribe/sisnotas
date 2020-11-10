@@ -27,4 +27,22 @@ class UtilController extends Controller
         $data['imgUrl'] = $responseBody[0]["url"];
         return View('util.modelNotFound')->with("data", $data);
     }
+    static public function weather()
+    {
+        $city = 'medellin';
+        $xApiKey = '307471f02e1184b4432b66c754b4cfe6';
+        $uri = 'http://api.openweathermap.org/data/2.5/weather';
+        $body = [
+            'q' => $city,
+            'appid' => '307471f02e1184b4432b66c754b4cfe6',
+            'units' => 'metric',
+        ];
+        $client = new Client();
+        $response = $client->request('GET', $uri, [
+            'query' => $body
+        ]);
+        $data = json_decode($response->getBody(), true);
+
+        return $data['name'] . ' ' . $data['main']['temp'] . 'º ' . $data['weather'][0]['main'];
+    }
 }

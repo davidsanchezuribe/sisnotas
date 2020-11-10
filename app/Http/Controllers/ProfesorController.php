@@ -21,7 +21,6 @@ class ProfesorController extends Controller
         
         return view('profesores.view') -> with("data", $data);
     }
-
    
     public function create()
     {

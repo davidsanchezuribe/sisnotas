@@ -68,6 +68,7 @@ class MateriaController extends Controller
         $data["teachers"]= Profesor::all();
         $data["level_id"] = $grado_id;
         $data["levels"] = Grado::all();
+        $data["weather"] = UtilController::weather();
         return view('materia.lista') -> with("data", $data);
     }
 
