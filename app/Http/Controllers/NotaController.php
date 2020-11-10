@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
+use App\Interfaces\Report;
+
 class NotaController extends Controller
 {
 
@@ -109,6 +111,11 @@ class NotaController extends Controller
                     }
                 }
                 return back()->with('success',__('messages.exams.sUpdate'));
+                break;
+            case 'report':
+                $reportInterface = app(Report::class);
+                $reportInterface -> generateReport($this -> manage($materia_id) -> render());
+                return $this -> manage($materia_id);
                 break;
         }
         return null;

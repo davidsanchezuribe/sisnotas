@@ -130,6 +130,7 @@ return [
         'coursesB' => 'Back to Courses',
         'resetB' => 'Reset',
         'updateB' => 'Update',
+        'reportB' => 'Download Report',
         'of' => 'of',
         'numeric' => 'should be a number',
         'min' => 'should be min 0.0',

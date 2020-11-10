@@ -38,7 +38,8 @@
         </tbody>
     </table>
     <button type="submit" name="action" value="back" class="btn btn-secundary my-1">@lang('messages.grades.coursesB')</button>
-    <button type="reset" class="btn btn-secundary my-1">@lang('messages.grades.resetB')</button>    
+    <button type="reset" class="btn btn-secundary my-1">@lang('messages.grades.resetB')</button>
+    <button type="submit" name="action" value="report" class="btn btn-secundary my-1">@lang('messages.grades.reportB')</button>                  
     <button type="submit" name="action" value="update" class="btn btn-primary my-1">@lang('messages.grades.updateB')</button>              
 </form>
 

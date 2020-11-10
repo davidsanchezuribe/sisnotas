@@ -138,6 +138,7 @@ return [
         'numeric' => 'debe ser un número',
         'min' => 'debe ser mínimo 0.0',
         'max' => 'debe ser máximo '. env('NOTE_MAX_VALUE', 5),
+        'reportB' => 'Descargar Reporte',
     ],
     'util' => [
         'modelNotFound' => [
