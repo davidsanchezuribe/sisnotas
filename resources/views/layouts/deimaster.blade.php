@@ -91,6 +91,15 @@
                     {{ $data["weather"] }}
                 </span>
             @endisset
+            <div>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Language
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('set.language', 'en') }}">EN</a>
+                    <a class="dropdown-item" href="{{ route('set.language', 'es') }}">ES</a>
+                </div>
+            </div>
             <div class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>

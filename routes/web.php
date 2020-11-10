@@ -60,4 +60,4 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::get('/set-language/{lang}', 'LanguagesController@set')->name('set.language');
