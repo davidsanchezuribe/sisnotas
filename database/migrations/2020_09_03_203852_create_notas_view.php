@@ -14,7 +14,7 @@ class CreateNotasView extends Migration
      */
     public function up()
     {
-        DB::statement("CREATE VIEW IF NOT EXISTS notasview AS
+        DB::statement("CREATE OR REPLACE VIEW notasview AS
                         SELECT evaluaciones.id AS evaluacion_id, 
                         materias.id AS materia_id,
                         estudiantes.id AS estudiante_id
